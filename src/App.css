@@ -171,6 +171,7 @@ footer p {
 
 .formFlex {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -188,10 +189,6 @@ footer p {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
           background: #22277a;
-}
-
-.search {
-  width: 120%;
 }
 
 .dateCursor {
@@ -242,7 +239,7 @@ footer p {
     width: 100%;
   }
 
-  .search {
-    width: 100%;
+  .formFlex {
+    justify-content: start;
   }
 }

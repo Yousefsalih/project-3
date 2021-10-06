@@ -20,10 +20,6 @@ const Form = (props) => {
         setEndDate(e.target.value)
     };
 
-    const setSearchFunction = (e) => {
-        setSearch(e.target.value)
-    };
-
     return (
         <div>
         <form onSubmit={(e) => props.getEvents(e, city,startDate,endDate,search)} >
@@ -42,11 +38,6 @@ const Form = (props) => {
         <div className="labelFlex">
         <label for="endDate">End Date</label>
         <input className="dateCursor" type="date" name="endDate" placeholder="Please enter an end date" required="true" value={endDate} onChange={setEndDateFunction}> 
-        </input>
-        </div>
-        <div className="labelFlex">
-        <label for="search">Search</label>
-        <input className="search" type="text" name="search" placeholder="Search for Artist, Venue, Genre" value={search} onChange={setSearchFunction}>
         </input>
         </div>
         </div>

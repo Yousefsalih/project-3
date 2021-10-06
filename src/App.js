@@ -23,9 +23,6 @@ function App() {
           startDateTime: `${startDate}T00:00:00Z`,
           endDateTime: `${endDate}T00:00:00Z`,
           size: 50,
-          keyword: search
-            // endDateTime: "2021-11-21",
-            // keyword: "canucks"
           },
           }).then((res) =>{
               let results = res.data._embedded.events
