@@ -58,7 +58,7 @@ function App() {
 
 {/* Condition for error message and results */}
       {error ? 
-        <p>No events found in the selections above. Refresh and search for a city within North America, Europe, or Australia. The greater the range of dates, the higher the chance of finding an event.</p> :
+        <p>No events found in the selections above. Please search for a city within North America, Europe, or Australia. The greater the range of dates, the higher the chance of finding an event.</p> :
         event.map((eachEvent)=>{
             return (
             <EventResults key={eachEvent.id}
