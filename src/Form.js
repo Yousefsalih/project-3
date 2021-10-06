@@ -22,7 +22,7 @@ const Form = (props) => {
     return (
         <div>
         <form onSubmit={(e) => props.getEvents(e, city,startDate,endDate,search)} >
-        <legend>Search for an event in your city:</legend>
+        <legend>Search for an event:</legend>
         <div className="formFlex">
         <div className="labelFlex">
             <label for="city">City</label>
