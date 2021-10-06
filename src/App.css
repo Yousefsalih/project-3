@@ -67,6 +67,7 @@ a:hover,
 a:focus, button:hover, button:focus {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  transition: all 1s;
   background: #ffb347;
 }
 
@@ -85,6 +86,7 @@ p {
 
 
 /* Form styling */
+
 form {
   margin-bottom: 3rem;
 }
@@ -111,6 +113,19 @@ input {
   background-color: #ffb347;
   color: #22277a;
   border-style: none;
+}
+
+input:-webkit-autofill {
+  -webkit-animation-delay: 1s;
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes autofill {
+  0%,100% {
+      color: #22277a;
+      background: transparent;
+  }
 }
 
 .dateCursor {

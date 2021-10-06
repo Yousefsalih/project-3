@@ -23,7 +23,7 @@ function App() {
           city: city,
           startDateTime: `${startDate}T00:00:00Z`,
           endDateTime: `${endDate}T00:00:00Z`,
-          size: 50,
+          size: 25,
           },
           }).then((res) =>{
               let results = res.data._embedded.events
