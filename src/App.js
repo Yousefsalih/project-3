@@ -13,7 +13,7 @@ function App() {
   const [event, setEvent] = useState([]);
   const [error, setError] = useState(false);
 
-  const callApi = (city,startDate, endDate, search) => {
+  const callApi = (city,startDate, endDate) => {
       axios({
           url: "https://app.ticketmaster.com/discovery/v2/events",
           method: "GET",
@@ -30,6 +30,7 @@ function App() {
               if (results.length > 0){
                   setEvent(res.data._embedded.events)
                   console.log(results)
+                  setError(false);
               }
           }).catch(error => {
                   setError(true);

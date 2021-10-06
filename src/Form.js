@@ -5,7 +5,6 @@ const Form = (props) => {
     const [city, setCity] = useState('');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
-    const [search, setSearch] = useState('');
 
     const setCityFunction = (e) => {
         setCity(e.target.value)
@@ -21,7 +20,7 @@ const Form = (props) => {
 
     return (
         <div>
-        <form onSubmit={(e) => props.getEvents(e, city,startDate,endDate,search)} >
+        <form onSubmit={(e) => props.getEvents(e, city,startDate,endDate)} >
         <legend>Search for an event:</legend>
         <div className="formFlex">
         <div className="labelFlex">
