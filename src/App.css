@@ -1,3 +1,4 @@
+/* Setup */
 html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
@@ -10,34 +11,41 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 body, h1, h2, h3, ul, aside, button, label, p, footer {margin: 0; padding: 0;}
 
-img {max-width: 100%; height: 100%; display: block; }
-
 html {font-size: 125%;}
 
+/* Wrapper */
 .wrapper {max-width: 1200px; width: 85%; margin: 0 auto;}
 
 
-
+/* General Styling */
 body {
   color:  #7fffd4;
   background-color: #22277a;
   font-family: 'Poppins', sans-serif;
 }
 
-a:hover,
-a:focus, button:hover, button:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-          background: #ffb347;
+img {
+  max-width: 100%; 
+  height: 100%; 
+  display: block;
+  -webkit-box-shadow: -5px 2px 5px 3px #FF69B4; 
+  box-shadow: -5px 2px 5px 3px #FF69B4; 
 }
 
+/* Header Gif */
 
-a {
-  text-decoration: none;
-  color: #22277a;
-  border-bottom: 1px solid #ffb347;
+.gifHeader img {
+  width: 60%;
+  box-shadow: none;
+  margin: 0 auto;
 }
 
+.gifHeader {
+  margin-top: 1rem;
+  height: 300px;
+}
+
+/* City lights header with blinking feature */
 h1 {
   font-family: 'Sacramento', cursive;
   text-shadow: 4px 2px #FF69B4;
@@ -53,15 +61,32 @@ h1 {
   100%{opacity: 1;}
   }
 
-img {
-  -webkit-box-shadow: -5px 2px 5px 3px #FF69B4; 
-  box-shadow: -5px 2px 5px 3px #FF69B4;
+
+/* Event links */
+a:hover,
+a:focus, button:hover, button:focus {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  background: #ffb347;
 }
+
+a {
+  text-decoration: none;
+  color: #22277a;
+  border-bottom: 1px solid #ffb347;
+}
+
 
 p {
   text-align: center;
   margin-bottom: 3rem;
   font-size: 2rem;
+}
+
+
+/* Form styling */
+form {
+  margin-bottom: 3rem;
 }
 
 legend {
@@ -73,6 +98,22 @@ label {
   margin-right: 0.7rem;
   font-size: 1rem;
   color: #ffb347;
+}
+
+input {
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  -webkit-box-shadow: 0px 2px 5px 3px #ffb347; 
+  box-shadow: 0px 2px 5px 3px #ffb347;
+  padding: 0.5rem;
+  padding-right: 4.5rem;
+  background-color: #ffb347;
+  color: #22277a;
+}
+
+.dateCursor {
+  cursor:pointer
 }
 
 button {
@@ -90,10 +131,8 @@ button {
   cursor: pointer;
 }
 
-form {
-  margin-bottom: 3rem;
-}
 
+/* Result Styling */
 .resultParagraph {
   text-align: left;
   font-size: 1rem;
@@ -123,23 +162,7 @@ form {
   width: 100%;
 }
 
-input {
-  margin-right: 1rem;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-  -webkit-box-shadow: 0px 2px 5px 3px #ffb347; 
-  box-shadow: 0px 2px 5px 3px #ffb347;
-  padding: 0.5rem;
-  padding-right: 4.5rem;
-  background-color: #ffb347;
-  color: #22277a;
-}
-
-h2 {
-  margin-bottom: 1rem;
-}
-
-h3 {
+h2, h3 {
   margin-bottom: 1rem;
 }
 
@@ -147,17 +170,6 @@ h3 {
   width: 200px;
   box-shadow: none;
   border: 1px solid #ffb347;
-}
-
-.gifHeader img {
-  width: 60%;
-  box-shadow: none;
-  margin: 0 auto;
-}
-
-.gifHeader {
-  margin-top: 1rem;
-  height: 300px;
 }
 
 footer p {
@@ -175,6 +187,7 @@ footer p {
   flex-wrap: wrap;
 }
 
+/* Footer Design */
 .footerParagraph, .footerlink {
   font-size: 1rem;
 }
@@ -191,10 +204,8 @@ footer p {
           background: #22277a;
 }
 
-.dateCursor {
-  cursor:pointer
-}
 
+/* Responsiveness */
 @media (max-width: 1200px) {
   .qrCode {
     width: 20%;
@@ -242,4 +253,11 @@ footer p {
   .formFlex {
     justify-content: start;
   }
+
+  .gifHeader img {
+    width: 90%;
+    box-shadow: none;
+    margin: 0 auto;
+  }
+
 }

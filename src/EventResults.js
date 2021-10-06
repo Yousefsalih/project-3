@@ -1,5 +1,6 @@
-import qrCode from './QR_CODE.png';
+import qrCode from './qrCode.png';
 
+//Event results after search
 function EventResults(props) {
     return (
         <div className="resultStyle">

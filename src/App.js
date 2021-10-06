@@ -1,14 +1,15 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import EventResults from './EventResults'
 import Form from './Form'
 import Font from './index'
 import gif from './giphy.gif';
-// import MapResults from './MapResults'
 
 
 function App() {
+
+// API call
   const [event, setEvent] = useState([]);
   const [error, setError] = useState(false);
 
@@ -41,18 +42,20 @@ function App() {
     e.preventDefault();
     callApi(city, startDate, endDate, search);
 };
-  
+
+// Header elements and the form
   return (
     <div className="wrapper">
       <header>
       <div className="gifHeader">
-        <img src={gif} alt="City gif" />
+        <img src={gif} alt="City gif in the header" />
         </div>
         <h1 className="headerLogo">City Lights</h1>
         <p>Never miss out on the hottest events in your city!</p>
         </header>
         <Form getEvents={handleSubmit} />
 
+{/* Condition for error message and results */}
       {error ? 
         <p>This is an error</p> :
         event.map((eachEvent)=>{

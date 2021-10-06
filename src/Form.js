@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from 'axios';
-import EventResults from './EventResults'
+import { useState } from "react";
 
+// Form conditions and values
 const Form = (props) => {
     const [city, setCity] = useState('');
     const [startDate, setStartDate] = useState('');
