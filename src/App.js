@@ -38,9 +38,9 @@ function App() {
           );
   }
 
-  const handleSubmit = (e, city, startDate, endDate, search) => {
+  const handleSubmit = (e, city, startDate, endDate) => {
     e.preventDefault();
-    callApi(city, startDate, endDate, search);
+    callApi(city, startDate, endDate);
 };
 
 // Header elements and the form
