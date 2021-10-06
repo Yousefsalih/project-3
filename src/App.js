@@ -29,7 +29,6 @@ function App() {
               let results = res.data._embedded.events
               if (results.length > 0){
                   setEvent(res.data._embedded.events)
-                  console.log(results)
                   setError(false);
               }
           }).catch(error => {
