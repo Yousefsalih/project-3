@@ -9,65 +9,72 @@ import gif from './giphy.gif';
 
 
 function App() {
-  // const [event, setEvent] = useState([]);
+  const [event, setEvent] = useState([]);
+  const [error, setError] = useState(false);
 
-  // useEffect(() => {
-  //   axios({
-  //     url: "https://app.ticketmaster.com/discovery/v2/events",
-  //     method: "GET",
-  //     dataResponse: "json",
-  //     params: {
-  //       apikey: "uresfuKyrYIVhF8lRGGj9EphAwlcgylk",
-  //       city: "Vancouver"
-  //       // endDateTime: "2021-11-21",
-  //       // keyword: "canucks"
-  //     },
-  //   }).then((res) =>{
-  //     setEvent(res.data._embedded.events)
-  //     console.log(res.data._embedded.events)
-  //   })
-  // }, [])
+  const callApi = (city,startDate, endDate, search) => {
+      axios({
+          url: "https://app.ticketmaster.com/discovery/v2/events",
+          method: "GET",
+          dataResponse: "json",
+          params: {
+          apikey: "uresfuKyrYIVhF8lRGGj9EphAwlcgylk",
+          city: city,
+          startDateTime: `${startDate}T00:00:00Z`,
+          endDateTime: `${endDate}T00:00:00Z`,
+          size: 50,
+          keyword: search
+            // endDateTime: "2021-11-21",
+            // keyword: "canucks"
+          },
+          }).then((res) =>{
+              let results = res.data._embedded.events
+              if (results.length > 0){
+                  setEvent(res.data._embedded.events)
+                  console.log(results)
+              }
+          }).catch(error => {
+                  setError(true);
+                  setEvent([]);
+              }
+          );
+  }
+
+  const handleSubmit = (e, city, startDate, endDate, search) => {
+    e.preventDefault();
+    callApi(city, startDate, endDate, search);
+};
   
   return (
-    <div className="App">
-      <header className="wrapper">
+    <div className="wrapper">
+      <header>
       <div className="gifHeader">
         <img src={gif} alt="City gif" />
         </div>
         <h1 className="headerLogo">City Lights</h1>
-
         <p>Never miss out on the hottest events in your city!</p>
-        <Form />
+        </header>
+        <Form getEvents={handleSubmit} />
 
-
-    {/* {
-      const userInput = () =>{
-        
-      }
-    } */}
-
-
-{/* Show Results on Page */}
-        {/* {
-          event.map((eachEvent)=>{
+      {error ? 
+        <p>This is an error</p> :
+        event.map((eachEvent)=>{
             return (
-              <EventResults key={eachEvent.id}
-              name={eachEvent.name}
-              imagePath={eachEvent.images[0].url}
-              venue={eachEvent._embedded.venues[0].name}
-              link={eachEvent.url}
-              // currency={eachEvent.currency} Not populating
-              // minPrice={eachEvent.priceRanges[0].min}
-              // maxPrice={eachEvent.priceRanges[0].max} 
-              />
+            <EventResults key={eachEvent.id}
+            name={eachEvent.name}
+            imagePath={eachEvent.images[0].url}
+            venue={eachEvent._embedded.venues[0].name}
+            date={eachEvent.dates.start.localDate}
+            link={eachEvent.url}
+            />
             );
-          })
-        } */}
-          <footer>
-          <p>Made by Yousef Salih</p>
-          <p className="footerParagraph">Created at Juno College</p>
+        })
+        }
+
+        <footer>
+          <p className="footerParagraph">Made by Yousef Salih at Juno College using data from the <a className="footerLink" href="https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/">Ticketmaster Discovery API</a></p>
         </footer>
-      </header>
+
     </div>
   );
 }

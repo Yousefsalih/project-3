@@ -6,7 +6,7 @@ function EventResults(props) {
             <div className="leftSide">
                 <h2>{props.name}</h2>
                 <h3> Venue: {props.venue}</h3>
-                <p className="resultParagraph"> Price: ${props.minPrice} - ${props.maxPrice} {props.test} </p>
+                <p className="resultParagraph">Date: {props.date} </p>
                 <a href={props.link}>Link to purchase a ticket</a>
             </div> 
             <div className="qrCode">
